@@ -50,7 +50,15 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater(){
+  for(let i = 0; i < employees.length; i++){
+    if(employees[i].firstName === "Theo"){
+       employees.splice(i,1)
+    }else if(employees[i].firstName === "Lorie"){
+       employees[i].department = "HR"
+    }
+  } return employees
+}
 
 
 
@@ -68,7 +76,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(){
+  for( let i = 0; i < workplaceAccidents.length; i++){
+    for( let k = i + 1; k < workplaceAccidents.length; k++){
+      if( workplaceAccidents[i] == workplaceAccidents[k]){
+          workplaceAccidents.splice(k,1)
+      }
+    }
+  }
+  return workplaceAccidents; 
+}
 
 
 
@@ -97,12 +114,10 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
-
-
-////////// PROBLEM 4 //////////
+///////// PROBLEM 4 //////////
 
 // Do not edit the code below.
 var myCar = {
@@ -126,37 +141,52 @@ var myCar = {
       atFaultForAccident: true
     }
   ]
-}
-// Do not edit the code above.
-
-/*
+ }
+ // Do not edit the code above.
+ 
+ /*
   Above is some information about my car. As you can see, I am not the best driver.
   I have caused a few accidents.
   Please update this driving record so that I can feel better about my driving skills.
     1. Write a function called recordCleaner.
     2. Loop over the accidents array.
     3. Change atFaultForAccident from true to false.
-*/
-
-//Code Here
-
-
-
-////////// PROBLEM 5 //////////
-
-// Do not edit the code below.
-var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
-// Do not edit the code above.
-
-/*
+ */
+ 
+ function recordCleaner(){
+   for(let i = 0; i < myCar.accidents.length; i++){
+     myCar.accidents[i].atFaultForAccident = false
+   }
+ }
+ 
+ 
+ ////////// PROBLEM 5 //////////
+ 
+ // Do not edit the code below.
+ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+ // Do not edit the code above.
+ 
+ /*
   Above is an array of arrays. Use two for loops.
-    1. Write a function called 'looper'. 
+    1. Write a function called 'looper'.
     2. 'looper' should loop over the arrays.
     3.  If the number is odd, replace it with 'odd'.
         If the number is even, replace it with 'even'.
     4. Return the modified numsArr.
-*/
-
-//Code Here
-
-
+ */
+ 
+ function looper(){
+  console.log('fireball')
+  for(let i = 0; i < numsArr.length; i++){
+    for(let k = 0; k < numsArr[i].length; k++){
+      if(numsArr[i][k] % 2 === 0){
+        numsArr[i][k] = "even"
+      } else{
+        numsArr[i][k] = "odd"
+      }
+    }
+  }
+  console.log('the array', numsArr)
+  return numsArr;
+ }
+ 
